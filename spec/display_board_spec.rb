@@ -154,11 +154,11 @@ describe "#display_board in 'lib/display_board.rb" do
       # Each line that starts with expect represents a row in the ouput.
       # The desired characters a row must include are provided by the String
       # of the row. EX: The top row filled with X would be " X | X | X "
-      expect(rows[0]).to eq(" X | x | X ")
+      expect(rows[0]).to eq(" X | X | X ")
       expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq(" x | X | X ")
+      expect(rows[2]).to eq(" X | X | X ")
       expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" x | X | x ")
+      expect(rows[4]).to eq(" X | X | X ")
 
       # You would code that expectation with:
       # expect(output).to include(" X | X | X ")
@@ -188,6 +188,11 @@ describe "#display_board in 'lib/display_board.rb" do
       output = capture_puts{ display_board(board) } if defined?(display_board)
       rows = output.split("\n")
 
+      expect(rows[0]).to eq(" O | O | O ")
+      expect(rows[1]).to eq("-----------")
+      expect(rows[2]).to eq(" O | O | O ")
+      expect(rows[3]).to eq("-----------")
+      expect(rows[4]).to eq(" x | X | x ")
       
 
       # Hint: You should be able to copy the code in the previous it example
